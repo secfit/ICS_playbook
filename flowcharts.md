@@ -11,7 +11,7 @@ flowchart TD
   E{Is reputation malicious?}
   F[Trigger internal incident response playbook]
   G[Generate Snort deny rule: drop 179.43.180.106 any -> any any]
-  H[Add IP to iptables drop list: -A RH-Firewall-1-INPUT -s 179.43.180.106/32 -p tcp -m state --state NEW -j REJECT]
+  H[Add IP to iptables drop list: -A INPUT -s 179.43.180.106/32 -p tcp -m state --state NEW -j REJECT]
   I[Notify SOC / IR team]
   J[Send alert to analyst dashboard]
   K[Trigger external CTI sharing playbook]
