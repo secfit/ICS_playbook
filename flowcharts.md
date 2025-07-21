@@ -18,11 +18,13 @@ flowchart TD
   L[Create new org in MISP if needed]
   M[Publish IOC as public indicator]
   N[Share to CTI platforms TAXII/MISP Federation]
+  O[Generate other custom firewall rule]
 
   A --> B
   B -- No --> C --> D --> E
   E -- Yes --> F --> I --> J --> G
   J --> H
+  J --> O
   F --> K --> L --> M --> N
 ```
 
